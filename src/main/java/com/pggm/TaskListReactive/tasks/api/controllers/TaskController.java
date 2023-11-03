@@ -32,4 +32,14 @@ public class TaskController implements ApiTask {
                 .build();
         return taskRepository.createTask(taskID, task);
     }
+
+    @Override
+    public Mono<Task> completedTask(String taskId) {
+        return taskRepository.completedTask(taskId);
+    }
+
+    @Override
+    public Mono<Task> getTask(String taskId) {
+        return taskRepository.getTask(taskId);
+    }
 }
